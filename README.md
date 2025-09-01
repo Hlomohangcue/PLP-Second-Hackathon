@@ -1,1 +1,0 @@
-# PLP-Second-Hackathon

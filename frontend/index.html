@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Study Buddy - Flashcard Generator</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <main class="container">
+        <header>
+            <h1>AI Study Buddy</h1>
+            <p>Transform your study notes into interactive flashcards instantly.</p>
+        </header>
+
+        <section id="input-section" class="card-section">
+            <div class="input-form">
+                <h2>Paste Your Study Notes</h2>
+                <textarea id="notes-input" placeholder="Paste your notes here..." maxlength="2000"></textarea>
+                <div class="input-actions">
+                    <span id="char-count">0/2000</span>
+                    <button id="generate-btn" class="btn btn-primary" disabled>Generate Flashcards</button>
+                    <button id="clear-btn" class="btn btn-secondary">Clear</button>
+                </div>
+                <p id="input-validation-msg" class="validation-msg"></p>
+            </div>
+        </section>
+
+        <section id="loading-section" class="card-section hidden">
+            <div class="loading-state">
+                <div class="spinner"></div>
+                <p id="loading-msg">Analyzing your notes...</p>
+                <progress id="loading-progress" value="30" max="100"></progress>
+            </div>
+        </section>
+
+        <section id="flashcard-section" class="card-section hidden">
+            <h2 id="flashcard-title">Your Flashcards</h2>
+            
+            <div id="flashcard-display">
+                <div class="flashcard-box question-box">
+                    <h3 class="box-title">Question</h3>
+                    <div id="question-text" class="box-content"></div>
+                </div>
+                <div class="flashcard-box answer-box hidden">
+                    <h3 class="box-title">Answer</h3>
+                    <div id="answer-text" class="box-content"></div>
+                </div>
+            </div>
+
+            <div class="flashcard-nav">
+                <button id="prev-btn" class="btn btn-nav">&lt; Previous</button>
+                <span id="card-progress"></span>
+                <button id="show-answer-btn" class="btn btn-secondary">Show Answer</button>
+                <button id="next-btn" class="btn btn-nav">Next &gt;</button>
+            </div>
+            <div class="save-actions">
+                <button id="save-btn" class="btn btn-primary">Save for Later</button>
+                <button id="new-set-btn" class="btn btn-secondary">Create New Set</button>
+            </div>
+        </section>
+
+        <div id="notification-container"></div>
+    </main>
+    <script src="js/main.js"></script>
+</body>
+</html>
